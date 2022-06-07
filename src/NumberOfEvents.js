@@ -2,22 +2,23 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
   state = {
-    numberOfEvents: 10
+    numberOfEvents: 32
   }
 
   handleChange = (e) => {
-    let value = parseInt(e.target.value)
+    let newValue = parseInt(e.target.value)
     this.setState({
-      numberOfEvents: value
+      numberOfEvents: newValue
     });
   }
 
   render() {
     return(
-      <div className="numberOfEvents">
+      <div style={{"display":"inline"}} className="numberOfEvents">
         <p>Show
           <span>
             <input
+              style={{"width":"5rem", "margin":"0 .5rem"}}
               className="number-of-events"
               type="number"
               value={this.state.numberOfEvents}
