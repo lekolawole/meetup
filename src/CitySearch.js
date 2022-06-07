@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class CitySearch extends Component {
   state = {
     query: '',
-    suggestions: []
-  };
+    suggestions: [],
+    showSuggestions: undefined
+  }
 
   handleInputChanged = (e) => {
     const value = e.target.value;
@@ -12,12 +13,15 @@ class CitySearch extends Component {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
     this.setState({ query: value, suggestions });
-  };
+  }
 
   handleItemClicked = (suggestion) => {
     this.setState({
-      query: suggestion
-    });
+      query: suggestion,
+      showSuggestions: false
+    })
+
+    this.props.updateEvents(suggestion);
   }; 
 
   render() {
@@ -28,8 +32,9 @@ class CitySearch extends Component {
           className="city"
           value={this.state.query}
           onChange={this.handleInputChanged}
+          onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
-        <ul className="suggestions">
+        <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (
             <li 
               key={suggestion} 
@@ -37,7 +42,7 @@ class CitySearch extends Component {
             {suggestion}
             </li>
           ))}
-          <li key='all'>
+          <li key='all' onClick={() => this.handleItemClicked('all')}>
             <b>See all cities</b>
           </li>
         </ul>
