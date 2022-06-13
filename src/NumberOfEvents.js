@@ -6,7 +6,7 @@ class NumberOfEvents extends Component {
   }
 
   handleChange = (e) => {
-    let newValue = parseInt(e.target.value)
+    let newValue = parseInt(e.target.value);
     this.setState({
       numberOfEvents: newValue
     });

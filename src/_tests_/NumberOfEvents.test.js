@@ -12,9 +12,9 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find('.number-of-events')).toHaveLength(1);
   });
 
-  test('render parse input change', () => {
-    expect(NumberOfEventsWrapper.find('.number-of-events')).toHaveLength(1);
-  });
+  // test('render parse input change', () => {
+  //   expect(NumberOfEventsWrapper.find('.number-of-events')).toHaveLength(1);
+  // });
 
   test('change state of numberOfEvents when input changes', () => {
     NumberOfEventsWrapper.find('.number-of-events').simulate('change', {
