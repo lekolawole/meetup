@@ -14,7 +14,7 @@ defineFeature(feature, test => {
         });
 
         when('an event is displayed', () => {
-
+          AppWrapper.update();
         });
 
         then('the event details are collapsed', () => {
@@ -29,7 +29,7 @@ defineFeature(feature, test => {
 
         when('the user clicks an event', () => {
           AppWrapper.update();
-          AppWrapper.find('.details-button').simulate('click');
+          AppWrapper.find('.details-button').at(0).simulate('click');
         });
 
         then('the event details will be displayed', () => {
@@ -41,12 +41,12 @@ defineFeature(feature, test => {
         given('the event details are displayed', async () => {
           AppWrapper = await mount(<App />);
           AppWrapper.update();
-          AppWrapper.find('.details-button').simulate('click');
+          AppWrapper.find('.details-button').at(0).simulate('click');
           expect(AppWrapper.find('.event-details')).toHaveLength(1);
         });
 
         when('the user clicks Details button', () => {
-          AppWrapper.find('.details-button').simulate('click');
+          AppWrapper.find('.details-button').at(0).simulate('click');
         });
 
         then('event details willbe hidden', () => {

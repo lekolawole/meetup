@@ -29,13 +29,13 @@ defineFeature(feature, test => {
 
         when('the user changes the number', () => {
           const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-          NumberOfEventsWrapper.find('.number-of-events').simulate('change', { target: { value: 10 } });
+          NumberOfEventsWrapper.find('#number-of-events').hostNodes().simulate('select', { target: { value: 2 } });
         });
 
         then('the user should receive a list of events that match what they’ve input', () => {
           const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-           NumberOfEventsWrapper.find('.number-of-events').simulate('change', { target: { value: 10 } });
-           expect(AppWrapper.state('numberOfEvents')).toEqual(10);
+           NumberOfEventsWrapper.find('#number-of-events').simulate('select', { target: { value: 2 } });
+           expect(AppWrapper.state('events')).toHaveLength(2);
         });
     });
 });

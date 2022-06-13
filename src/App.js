@@ -43,9 +43,7 @@ class App extends Component {
     }
     //checks whether list is from 'all' or 'suggestions'
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ? 
-      events : 
-      events.filter((event) => event.location === location);
+      const locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location);
       this.setState({
         events: locationEvents.slice(0, eventsNumber),
         numberOfEvents: eventsNumber
@@ -57,7 +55,7 @@ class App extends Component {
      return (
     <div className="App">
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-      <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+      <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
       <EventList events={this.state.events} />
     </div>
   );

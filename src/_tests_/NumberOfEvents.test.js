@@ -9,16 +9,12 @@ describe('<NumberOfEvents /> component', () => {
   });
 
   test('render NumberOfEvents', () => {
-    expect(NumberOfEventsWrapper.find('.number-of-events')).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find('#number-of-events')).toHaveLength(1);
   });
 
-  // test('render parse input change', () => {
-  //   expect(NumberOfEventsWrapper.find('.number-of-events')).toHaveLength(1);
-  // });
-
   test('change state of numberOfEvents when input changes', () => {
-    NumberOfEventsWrapper.find('.number-of-events').simulate('change', {
-      target: { value: 8 } });
-    expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(8);
+    NumberOfEventsWrapper.find('#number-of-events').hostNodes().simulate('select', {
+      target: { value: 12 } });
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(12);
   });
 })
