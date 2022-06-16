@@ -45,7 +45,8 @@ input[type="number"] {
   flex-direction: column;
   flex-basis: 300px;
   max-width: 300px;
-  margin: auto;
+  /* margin: auto; */
+  margin: 1rem auto;
   position: relative;
 }
 
@@ -128,9 +129,11 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
+.Alert p{
   position: fixed;
-  top: 20px;
+  top: 10px;
+  display: flex;
+  margin: 0 auto;
 }
 
 .data-vis-wrapper {
