@@ -19,7 +19,7 @@ class Event extends Component {
 
     return (
       <div className="event">
-        <h4 className="startDate">{event.start.dateTime} ({event.start.timeZone})</h4>
+        <h4 className="startDate">{event.start.dateTime.slice(0, 10)} {event.start.dateTime.slice(11, 16)} ({event.start.timeZone})</h4>
         <h1 className="summary">{event.summary}</h1>
         <p className="location">@{event.summary} | {event.location}</p>
         <button 
@@ -29,7 +29,7 @@ class Event extends Component {
         {!collapsed && (
           <div className="event-details collapsed">
             <p className="description">{event.description}</p>
-            <p>End Time: {event.end.dateTime} ({event.end.timeZone})</p>
+            <p>End Time: {event.end.dateTime.slice(0, 10)} {event.end.dateTime.slice(11, 16)} ({event.end.timeZone})</p>
             <a className="event-link" href={event.htmlLink}>Event Link</a>
           </div>
         )}
