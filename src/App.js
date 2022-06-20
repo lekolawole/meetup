@@ -58,7 +58,7 @@ class App extends Component {
     const { events, numberOfEvents } = this.state;
      return (
     <div className="App">
-      {!navigator.onLine ? <OfflineAlert text='You are offline. Some features may be unavailable until internet access can be reconnected.' /> : this.state.OfflineAlertText}
+      {navigator.onLine ? this.state.OfflineAlertText : <OfflineAlert text='You are offline. Some features may be unavailable until an internet connections can be establised.' />}
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={(number) => {
         this.updateNumberOfEvents(number)
