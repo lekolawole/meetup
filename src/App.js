@@ -20,8 +20,7 @@ class App extends Component {
   async componentDidMount() {
     this.mounted = true;
     const accessToken = localStorage.getItem('access_token');
-    const isTokenValid = (await checkToken(accessToken)).error ? false :
-  true;
+    const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
@@ -70,7 +69,7 @@ className="App" />
 
      return (
     <div className="App">
-      {navigator.onLine ? this.state.OfflineAlertText : <OfflineAlert text='You are offline. Some features may be unavailable until an internet connections can be establised.' />}
+      {navigator.onLine ? this.state.OfflineAlertText : <OfflineAlert text='You are offline. Some features may be unavailable until an internet connection can be establised.' />}
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={(number) => {
         this.updateNumberOfEvents(number)
