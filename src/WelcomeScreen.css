@@ -1,9 +1,10 @@
 .WelcomeScreen {
   position: fixed;
   width: 90%;
-  height: 100%;
+  height: 90%;
   top: 0;
   background: white;
+  display: flex;
 }
 .login-button {
   color: #494949;
@@ -58,4 +59,24 @@
   text-align: center;
   border: none;
   border-radius: 5rem;
+}
+.welcome-logo {
+  border-radius: 2rem;
+}
+
+.illustration-wrapper {
+  margin-top: 18%;
+  margin-right: 4rem;
+}
+
+.text-wrapper {
+  margin-top: 5rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  border-left: 2px solid #27405A;
+}
+h1 {
+  font-family:Arial, Helvetica, sans-serif;
+  padding-bottom: 10%;
+  font-weight: bold;
 }
