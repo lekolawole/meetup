@@ -11,7 +11,7 @@ function WelcomeScreen(props) {
           <img className="illustration" src="https://assets.website-files.com/5d5e2ff58f10c53dcffd8683/5d5e305b898356dc76c60d38_chilling.svg" alt="illustration" width="300" />
         </div>
         <div className="text-wrapper">
-          <h1>Welcome to MeetUp</h1>
+          <h1 className="welcome-text">Welcome to MeetUp</h1>
         <img src='https://github.com/lekolawole/meetup/blob/main/public/meet-app-192.png?raw=true' alt='logo' className="welcome-logo"/>
         <h4>Log in to see upcoming events around the world for full-stack developers</h4>
         <div className="button_cont" align="center">
