@@ -4,6 +4,9 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+} from 'recharts';
 import { OfflineAlert } from './Alert';
 import WelcomeScreen from './WelcomeScreen';
 
@@ -62,6 +65,26 @@ class App extends Component {
     });
   }
 
+  getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return {city, number};
+    })
+
+    // FOR TESTING IN LOCALHOST
+      // const data = [
+      //   { "city": "Dubai", "number": 2 },
+      //   { "city": "Toronto", "number": 2 },
+      //   { "city": "Santiago", "number": 3 },
+      //   { "city": "Tokyo", "number": 2 },
+      //   { "city": "London", "number": 2 },
+      //   { "city": "New York City", "number": 2 }
+      // ]
+    return data;
+  }
+
   render() {
     const { events, numberOfEvents } = this.state;
     if (this.state.showWelcomeScreen === undefined) return <div
@@ -74,6 +97,20 @@ className="App" />
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={(number) => {
         this.updateNumberOfEvents(number)
       }} />
+      <h4>Events in each city</h4>
+      <ResponsiveContainer height={400}>
+        <ScatterChart
+          margin={{
+            top: 20, right: 20, bottom: 20, left: 20,
+          }}
+        >
+          <CartesianGrid />
+          <XAxis type="category" dataKey="city" name="city" />
+          <YAxis allowDecimals={false} type="number" dataKey="number" name="number of events" />
+          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+          <Scatter data={this.getData()} fill="#8884d8" />
+        </ScatterChart>
+      </ResponsiveContainer>
       <EventList numberOfEvents={numberOfEvents} events={events} />
       <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     </div>
