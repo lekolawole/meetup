@@ -1,8 +1,8 @@
 # MeetUp
 A serverless web app that features events by city. 
 
-## Access 
-Hosted @ https://lekolawole.github.io/meetup/
+## Description 
+
 
 ## Key Features
 <ol>
@@ -13,3 +13,13 @@ Hosted @ https://lekolawole.github.io/meetup/
   <li>Add an app shortcut to the home screen.</li>
   <li>View a chart showing the number of upcoming events by city.</li>
 </ol>
+
+## Technical 
+Built with React
+<ul>
+  <li>JS</li>
+  <li>CSS</li>
+  <li>Responsive Design</li>
+  <li>Recharts</li>
+  <li>Google Authentical</li>
+</ul>

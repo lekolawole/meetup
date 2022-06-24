@@ -6,12 +6,16 @@ class EventList extends Component {
   render() {
     const { events } = this.props;
     return (
-      <ul className="EventList">
+      <div className="list-wrapper">
+        <h2 className="list-h2">Around the World 🌎</h2>
+        <ul className="EventList">
         {events.map(event =>
           <li key={event.id}>
             <Event event={event} />
           </li>)}
       </ul>
+      </div>
+      
     );
   }
 }
