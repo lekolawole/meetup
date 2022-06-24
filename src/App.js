@@ -99,7 +99,7 @@ className="App" />
       </div>
       
       <EventList numberOfEvents={numberOfEvents} events={events} />
-      {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} /> */}
+      <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     </div>
   );
   }
