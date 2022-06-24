@@ -6,7 +6,8 @@ function WelcomeScreen(props) {
   return props.showWelcomeScreen ?
     (
       <div className="WelcomeScreen">
-         <div className="illustration-wrapper">
+        <div className="welcome-container">
+           <div className="illustration-wrapper">
           <img className="illustration" src="https://opendoodles.s3-us-west-1.amazonaws.com/rolling.png" alt="illustration" width="300"/>
           <img className="illustration" src="https://assets.website-files.com/5d5e2ff58f10c53dcffd8683/5d5e305b898356dc76c60d38_chilling.svg" alt="illustration" width="300" />
         </div>
@@ -25,6 +26,7 @@ function WelcomeScreen(props) {
             </div>
         </div>
         <a href="https://lekolawole.github.io/meetup/privacy.html" rel="nofollow noopener">Privacy policy</a>
+        </div>
         </div>
       </div> )
     : null }

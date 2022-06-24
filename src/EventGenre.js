@@ -13,14 +13,6 @@ const EventGenre = ({ events }) => {
       const value = events.filter((event) => event.summary.split(' ').includes(genre)).length;
       return {name: genre, value: value};
     });
-
-    // FOR TESTING
-  //   const data = [
-  //   { name: 'Group A', value: 400 },
-  //   { name: 'Group B', value: 300 },
-  //   { name: 'Group C', value: 300 },
-  //   { name: 'Group D', value: 200 },
-  // ];
     return data;
   }
     
@@ -37,6 +29,7 @@ const EventGenre = ({ events }) => {
             outerRadius={80}
             fill="#8884d8"
             dataKey="value"
+            style={{"fontSize":"12px"}}
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index]} name={entry.name}/>

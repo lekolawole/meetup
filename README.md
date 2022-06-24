@@ -1,5 +1,5 @@
 # MeetUp
-A serverless web app that features events by city. 
+A serverless web app that features events by city around the world. 
 
 ## Description 
 
@@ -22,4 +22,6 @@ Built with React
   <li>Responsive Design</li>
   <li>Recharts</li>
   <li>Google Authentical</li>
+  <li>PWA</li>
 </ul>
+

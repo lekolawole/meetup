@@ -48,13 +48,6 @@ class App extends Component {
   };
 
   updateEvents = (location, eventsNumber) => {
-
-    // if (eventsNumber === undefined) {
-    //   eventsNumber = this.state.numberOfEvents;
-    // } else {
-    //   this.setState({ numberOfEvents: eventsNumber })
-    // }
-    //checks whether list is from 'all' or 'suggestions'
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location);
       this.setState({
@@ -71,16 +64,6 @@ class App extends Component {
       const city = location.split(', ').shift()
       return {city, number};
     })
-
-    // FOR TESTING IN LOCALHOST
-      // const data = [
-      //   { "city": "Dubai", "number": 2 },
-      //   { "city": "Toronto", "number": 2 },
-      //   { "city": "Santiago", "number": 3 },
-      //   { "city": "Tokyo", "number": 2 },
-      //   { "city": "London", "number": 2 },
-      //   { "city": "New York City", "number": 2 }
-      // ]
     return data;
   }
 
@@ -96,7 +79,7 @@ className="App" />
       <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={(number) => {
         this.updateNumberOfEvents(number)
       }} />
-       <h2>Event Popularity</h2>
+       <h2 className='list-h2'>Event Popularity</h2>
       <div className='data-vis-wrapper'>
        
         <EventGenre events={events} />
@@ -116,7 +99,7 @@ className="App" />
       </div>
       
       <EventList numberOfEvents={numberOfEvents} events={events} />
-      <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
+      {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} /> */}
     </div>
   );
   }

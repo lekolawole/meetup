@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
-/* .App {
-  text-align: center;
-  padding: 2% 5%;
-} */
+.App {
+  /* text-align: center; */
+  padding: 2% 0;
+}
 
 .App * {
   box-sizing: border-box;
@@ -45,7 +45,6 @@ input[type="number"] {
   flex-direction: column;
   flex-basis: 300px;
   max-width: 300px;
-  /* margin: auto; */
   margin: 1rem auto;
   position: relative;
 }
@@ -81,14 +80,14 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: center;
-  border: 2px solid #392a1d;
+  border: 1px solid #392a1d;
   border-radius: 15px;
   position: relative;
 }
 
 .event-details {
   padding-top: 5px;
-  background-color: #b1dcbd;
+  background-color: #dad9d9;
   color: #000;
 }
 
@@ -106,14 +105,12 @@ a:hover {
 }
 
 .details-button {
-  /* position: absolute; */
-  /* right: 5px; */
   margin-top: 10px;
-  /* bottom: 5px; */
-  padding: 5px 8px;
+  padding: 8px 8px;
   border-radius: 4px;
-  background-color: #fff;
-  outline: none;
+  background-color: rgb(16, 65, 120);
+  color: white;
+  border: none;
   cursor: pointer;
   font-weight: bold;
 }
@@ -162,7 +159,7 @@ a:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #fcbf8d;
+  background-color: #234884;
   text-align: center;
   padding: 2% 5%;
 }
@@ -236,12 +233,6 @@ a:hover {
 
 .data-h2 {
   border-radius: 20px;
-  /* width: 30rem; */
-  /* line-height: 4rem; */
-  /* position: absolute; */
-  /* height: 20rem; */
-  /* margin: 5rem auto; */
-  /* margin-right: 70%; */
   background-color: #fff;
   border: #f07f85 1px solid;
 }

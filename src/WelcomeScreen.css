@@ -7,6 +7,23 @@
   display: flex;
   text-align: center;
   padding: 2% 5%;
+
+  /* Background Gradient */
+  background: linear-gradient(-45deg, #e0e3b1, #e591b1, #5a7ad3, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
 }
 .login-button {
   color: #494949;
@@ -65,14 +82,13 @@
 .welcome-logo {
   border-radius: 2rem;
 }
-
 .illustration-wrapper {
   margin-top: 18%;
   margin-right: 4rem;
 }
-
 .text-wrapper {
   margin-top: 5rem;
+  margin-bottom: 5rem;
   padding-left: 2rem;
   padding-right: 1rem;
   border-left: 2px solid #27405A;
@@ -81,4 +97,9 @@
   font-family:Arial, Helvetica, sans-serif;
   padding-bottom: 10%;
   font-weight: bold;
+}
+.welcome-container {
+  background-color: #fff;
+  display: flex;
+  border-radius: 3rem;
 }
